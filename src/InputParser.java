@@ -2,16 +2,13 @@ import java.io.*;
 import java.util.*;
 
 class InputParser{
-	public static void parseInput (String filename, DirectedGraph dg){
-		try (BufferedReader br = new BufferedReader (new FileReader (filename))){
+	public static void parseInput (final String filename, final DirectedGraph dg){
+		try (final BufferedReader br = new BufferedReader (new FileReader (filename))){
 			String line;
-			int lineCount = 0;
-			int numVertices = Integer.parseInt (br.readLine().trim());
-			//System.out.println (numVertices);
+			final int numVertices = Integer.parseInt (br.readLine().trim());
 			while ((line = br.readLine()) != null){
-				String[] parts = line.split ("\\s+");
-				int[] numbers = Arrays.stream(parts).mapToInt(Integer::parseInt).toArray();
-				//System.out.println (numbers[0]+" "+numbers[1]+" "+numbers[2]);
+				final String[] parts = line.split ("\\s+");
+				final int[] numbers = Arrays.stream(parts).mapToInt(Integer::parseInt).toArray();
 				dg.insertVertex (numbers[0], numbers[1], numbers[2]);
 			}
 		} catch (IOException | NumberFormatException e){

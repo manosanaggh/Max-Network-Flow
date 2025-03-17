@@ -7,22 +7,22 @@ class DirectedGraph{
 		vertices = new ArrayList<>();
 	}
 
-        private boolean contains (int name){
-                for (Vertex a: vertices)
+        private boolean contains (final int name){
+                for (final Vertex a: vertices)
                         if (name == a.getName())
                                 return true;
 
                 return false;
         }
 
-	public void insertVertex(int from, int to, int capacity){
+	public void insertVertex(final int from, final int to, final int capacity){
 		if (!contains (from)){
 			Vertex v = new Vertex (from);
 			vertices.add (v);
 			v.insertEdge (new Edge (to, capacity));
 		}
 		else
-			for (Vertex v: vertices)
+			for (final Vertex v: vertices)
 				if (v.getName() == from)
 					v.insertEdge (new Edge (to, capacity));
 	}
@@ -32,7 +32,7 @@ class DirectedGraph{
 	}
 
 	public void printVertices(){
-		for (Vertex v: vertices){
+		for (final Vertex v: vertices){
 			System.out.println (v);
 		}
 	}
