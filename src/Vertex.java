@@ -4,16 +4,16 @@ class Vertex{
 	private int name;
 	private ArrayList<Edge> edges = null;
 
-	public Vertex(final int name){
+	Vertex(final int name){
 		this.name = name;
 		edges = new ArrayList<>();
 	}
 
-	public int getName(){
+	int getName(){
 		return name;
 	}
 
-	public ArrayList<Edge> getEdges(){
+	ArrayList<Edge> getEdges(){
 		return edges;
 	}
 
@@ -27,7 +27,7 @@ class Vertex{
                 return false;
         }
 
-	public void insertEdge (final Edge e){
+	void insertEdge (final Edge e){
 		if (!contains (e) && e.getName() > name)
 			edges.add(e);
 	}

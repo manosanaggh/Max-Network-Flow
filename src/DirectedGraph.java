@@ -3,7 +3,7 @@ import java.util.ArrayList;
 class DirectedGraph{
 	private ArrayList<Vertex> vertices = null;
 
-	public DirectedGraph(){
+	DirectedGraph(){
 		vertices = new ArrayList<>();
 	}
 
@@ -15,7 +15,7 @@ class DirectedGraph{
                 return false;
         }
 
-	public void insertVertex(final int from, final int to, final int capacity){
+	void insertVertex(final int from, final int to, final int capacity){
 		if (!contains (from)){
 			Vertex v = new Vertex (from);
 			vertices.add (v);
@@ -27,11 +27,11 @@ class DirectedGraph{
 					v.insertEdge (new Edge (to, capacity));
 	}
 
-	public ArrayList<Vertex> getVertices(){
+	ArrayList<Vertex> getVertices(){
 		return vertices;
 	}
 
-	public void printVertices(){
+	void printVertices(){
 		for (final Vertex v: vertices){
 			System.out.println (v);
 		}
