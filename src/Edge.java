@@ -7,11 +7,11 @@ class Edge{
 		this.capacity = capacity;
 	}
 
-        int getName(){
+        final int getName(){
                 return destinationVertexName;
         }
 
-        int getCapacity(){
+        final int getCapacity(){
                 return capacity;
         }
 

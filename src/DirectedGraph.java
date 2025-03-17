@@ -7,7 +7,7 @@ class DirectedGraph{
 		vertices = new ArrayList<>();
 	}
 
-        private boolean contains (final int name){
+        private final boolean contains (final int name){
                 for (final Vertex a: vertices)
                         if (name == a.getName())
                                 return true;
@@ -15,7 +15,7 @@ class DirectedGraph{
                 return false;
         }
 
-	void insertVertex(final int from, final int to, final int capacity){
+	final void insertVertex(final int from, final int to, final int capacity){
 		if (!contains (from)){
 			Vertex v = new Vertex (from);
 			vertices.add (v);
@@ -27,11 +27,11 @@ class DirectedGraph{
 					v.insertEdge (new Edge (to, capacity));
 	}
 
-	ArrayList<Vertex> getVertices(){
+	final ArrayList<Vertex> getVertices(){
 		return vertices;
 	}
 
-	void printVertices(){
+	final void printVertices(){
 		for (final Vertex v: vertices){
 			System.out.println (v);
 		}

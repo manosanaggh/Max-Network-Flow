@@ -9,15 +9,15 @@ class Vertex{
 		edges = new ArrayList<>();
 	}
 
-	int getName(){
+	final int getName(){
 		return name;
 	}
 
-	ArrayList<Edge> getEdges(){
+	final ArrayList<Edge> getEdges(){
 		return edges;
 	}
 
-        private boolean contains (final Edge e){
+        private final boolean contains (final Edge e){
                 for (final Edge a: edges){
                         if (e.getName() == a.getName()){
                                 return true;
@@ -27,7 +27,7 @@ class Vertex{
                 return false;
         }
 
-	void insertEdge (final Edge e){
+	final void insertEdge (final Edge e){
 		if (!contains (e) && e.getName() > name)
 			edges.add(e);
 	}

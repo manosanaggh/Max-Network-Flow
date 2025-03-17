@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 class InputParser{
-	static void parseInput (final String filename, final DirectedGraph dg){
+	final static void parseInput (final String filename, final DirectedGraph dg){
 		try (final BufferedReader br = new BufferedReader (new FileReader (filename))){
 			String line;
 			final int numVertices = Integer.parseInt (br.readLine().trim());
