@@ -15,16 +15,11 @@ class DirectedGraph{
                 return false;
         }
 
-	final void insertVertex(final int from, final int to, final int capacity){
-		if (!contains (from)){
-			Vertex v = new Vertex (from);
+	final void insertVertex(final int id){
+		if (!contains (id)){
+			Vertex v = new Vertex (id);
 			vertices.add (v);
-			v.insertEdge (new Edge (to, capacity));
 		}
-		else
-			for (final Vertex v: vertices)
-				if (v.getName() == from)
-					v.insertEdge (new Edge (to, capacity));
 	}
 
 	final ArrayList<Vertex> getVertices(){
