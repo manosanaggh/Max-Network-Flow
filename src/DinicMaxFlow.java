@@ -20,9 +20,9 @@ class DinicMaxFlow{
 		
 		while(!queue.isEmpty()){
 			final int node = queue.poll(); // Dequeue in FIFO order.
-			// Traverse the edges of the vertex
+			/* Traverse the edges of the vertex. */
 			for (Edge edge : vertices.get(node).getEdges()){
-				// If the level of destination vertex is not set and there is unused capacity, do things.
+				/* If the level of destination vertex is not set and there is unused capacity, do things. */
 				if (level.get(edge.getId()) == -1
 				    && edge.getFlow() < edge.getCapacity()){
 					level.set(edge.getId(), level.get(node)+1); // Set the level of destination vertex to be 										    // the level of the source vertex plus 1.
@@ -31,7 +31,7 @@ class DinicMaxFlow{
 			}
 		}
 
-		// Print the level graph.
+		/* Print the level graph. */
                 System.out.println ("Level Graph: ");
                 for (int i = 0; i < level.size(); i++)
                 	System.out.println ("Node " +i+"-> Level: "+level.get(i));

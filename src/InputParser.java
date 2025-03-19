@@ -1,7 +1,10 @@
+/* Class used to describe a parser object. */
+
 import java.io.*;
 import java.util.*;
 
 class InputParser{
+	/* Parse the input from file path and create the graph. */
 	final static void parseInput (final String filename, final DirectedGraph dg){
 		try (final BufferedReader br = new BufferedReader (new FileReader (filename))){
 			String line;
