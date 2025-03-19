@@ -27,8 +27,8 @@ class Vertex{
                 return false;
         }
 
-	final void insertEdge (final Edge e){
-		if (!contains (e) && e.getName() > name)
+	final void insertEdge (Edge e){
+		if (!contains (e))
 			edges.add(e);
 	}
 
