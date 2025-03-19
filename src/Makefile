@@ -2,4 +2,4 @@ run:
 	javac *.java
 	java Application
 clean:
-	rm -rf *.class
+	rm -rf *.class *.txt
