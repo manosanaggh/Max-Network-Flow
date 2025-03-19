@@ -7,9 +7,9 @@ class DirectedGraph{
 		vertices = new ArrayList<>();
 	}
 
-        private final boolean contains (final int name){
+        private final boolean contains (final int id){
                 for (final Vertex a: vertices)
-                        if (name == a.getName())
+                        if (id == a.getId())
                                 return true;
 
                 return false;

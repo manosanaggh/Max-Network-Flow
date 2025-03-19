@@ -1,18 +1,18 @@
 class Edge{
-	private int destinationVertexName;
+	private int destinationVertexId;
 	private int capacity;
 	private int flow;
 	private Edge reverse;
 
-	Edge(final int name, final int capacity){
-		destinationVertexName = name;
+	Edge(final int id, final int capacity){
+		destinationVertexId = id;
 		this.capacity = capacity;
 		flow = 0;
 		this.reverse = null;
 	}
 
-        final int getName(){
-                return destinationVertexName;
+        final int getId(){
+                return destinationVertexId;
         }
 
         final int getCapacity(){
@@ -36,6 +36,6 @@ class Edge{
 	}
 
         @Override public String toString(){
-                return "("+destinationVertexName+","+capacity+")";
+                return "("+destinationVertexId+","+capacity+")";
         }
 }

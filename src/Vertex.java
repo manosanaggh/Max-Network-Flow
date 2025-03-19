@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
 class Vertex{
-	private int name;
+	private int id;
 	private ArrayList<Edge> edges = null;
 
-	Vertex(final int name){
-		this.name = name;
+	Vertex(final int id){
+		this.id = id;
 		edges = new ArrayList<>();
 	}
 
-	final int getName(){
-		return name;
+	final int getId(){
+		return id;
 	}
 
 	final ArrayList<Edge> getEdges(){
@@ -19,7 +19,7 @@ class Vertex{
 
         private final boolean contains (final Edge e){
                 for (final Edge a: edges){
-                        if (e.getName() == a.getName()){
+                        if (e.getId() == a.getId()){
                                 return true;
                         }
                 }
@@ -33,6 +33,6 @@ class Vertex{
 	}
 
 	@Override public String toString(){
-		return "Vertex name: "+name+"\n"+"Edges: "+edges;
+		return "Vertex id: "+id+"\n"+"Edges: "+edges;
 	}
 }

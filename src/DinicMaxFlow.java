@@ -17,10 +17,10 @@ class DinicMaxFlow{
 		while(!queue.isEmpty()){
 			final int node = queue.poll();
 			for (Edge edge : vertices.get(node).getEdges()){
-				if (level.get(edge.getName()) == -1
+				if (level.get(edge.getId()) == -1
 				    && edge.getFlow() < edge.getCapacity()){
-					level.set(edge.getName(), level.get(node)+1);
-					queue.add(edge.getName());
+					level.set(edge.getId(), level.get(node)+1);
+					queue.add(edge.getId());
 				}
 			}
 		}
@@ -35,17 +35,17 @@ class DinicMaxFlow{
 	private int dfs(int node, int sink, int flow, ArrayList<Vertex> vertices){
 		if (node == sink) return flow;
 		for (Edge edge : vertices.get(node).getEdges()){
-			if (level.get(edge.getName()) == level.get(node) + 1
+			if (level.get(edge.getId()) == level.get(node) + 1
 			    && edge.getFlow() < edge.getCapacity()){
 				int minFlow = Math.min(flow, edge.getCapacity() - edge.getFlow());
-				int pushedFlow = dfs(edge.getName(), sink, minFlow, vertices);
+				int pushedFlow = dfs(edge.getId(), sink, minFlow, vertices);
 				Edge reverse = edge.getReverse();
 
 				if (pushedFlow > 0){
 					edge.setFlow (edge.getFlow() + pushedFlow);
 					reverse.setFlow (reverse.getFlow() - pushedFlow);
 					System.out.println ("Flow pushed: " + pushedFlow + " through " + node
-							     + " -> " + edge.getName());
+							     + " -> " + edge.getId());
 					System.out.println ("Updated capacity: " + (edge.getCapacity() - edge.getFlow()));
 					return pushedFlow;
 				}
@@ -68,7 +68,7 @@ class DinicMaxFlow{
 				for (Edge edge : vertices.get(i).getEdges()){
 					int capacity = edge.getCapacity();
 					if (capacity > 0)
-						System.out.println(i + " -> " + edge.getName() + " | Flow: "
+						System.out.println(i + " -> " + edge.getId() + " | Flow: "
 								   + edge.getFlow() + " / " + capacity);
 				}
 			}
