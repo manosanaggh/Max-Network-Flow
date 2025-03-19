@@ -25,7 +25,7 @@ class Edge{
         }
 
 	/* Reverse edge setter. */
-	final void setReverse(Edge reverse){
+	final void setReverse(final Edge reverse){
 		this.reverse = reverse;
 	}
 
@@ -35,7 +35,7 @@ class Edge{
 	}
 
 	/* Flow setter. */
-	final void setFlow(int flow){
+	final void setFlow(final int flow){
 		this.flow = flow;
 	}
 

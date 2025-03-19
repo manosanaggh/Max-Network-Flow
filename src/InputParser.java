@@ -12,8 +12,8 @@ class InputParser{
 			while ((line = br.readLine()) != null){
 				final String[] parts = line.split ("\\s+");
 				final int[] numbers = Arrays.stream(parts).mapToInt(Integer::parseInt).toArray();
-				Edge e0 = new Edge (numbers[1], numbers[2]);
-				Edge e1 = new Edge (numbers[0], 0);
+				final Edge e0 = new Edge (numbers[1], numbers[2]);
+				final Edge e1 = new Edge (numbers[0], 0);
 				e0.setReverse(e1);
 				e1.setReverse(e0);
 				dg.getVertices().get(numbers[0]).insertEdge(e0);

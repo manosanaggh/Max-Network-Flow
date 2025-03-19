@@ -9,7 +9,8 @@ class Application{
 		DirectedGraph dg = new DirectedGraph(); //Create a graph instance.
 		InputParser.parseInput("input/input1.txt", dg); //Enter path/to/input here.
 		dg.printVertices(); //Print the input to check validity. Also check reverse edges are alright.
-		DinicMaxFlow dmf = new DinicMaxFlow(dg.getVertices().size()); //Create new Dinic's algorithm instance.
-		System.out.println ("Max Flow: " + dmf.maxFlow(0, 3, dg)); //Print max flow. Be careful to give source and sink 									     vertex id correctly.		
+		DinicMaxFlow.setNumVertices(dg.getVertices().size()); // numVertices must be set first in order to initialize
+								      // the level list.
+		System.out.println ("Max Flow: " + DinicMaxFlow.maxFlow(0, 3, dg)); //Print max flow. Be careful to give source 										    // and sink vertex id correctly.		
 	}
 }

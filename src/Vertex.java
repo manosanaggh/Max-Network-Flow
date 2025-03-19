@@ -34,7 +34,7 @@ class Vertex{
         }
 
 	/* Method used to insert an edge. */
-	final void insertEdge (Edge e){
+	final void insertEdge (final Edge e){
 		if (!contains (e))
 			edges.add(e);
 	}
